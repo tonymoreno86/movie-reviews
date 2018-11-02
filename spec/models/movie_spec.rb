@@ -111,7 +111,6 @@ describe "A movie" do
     file_names.each do |file_name|
       movie = Movie.new(image_file_name: file_name)
       movie.valid?
-      expect(movie.errors[:image_file_name].any?).to eq(true)
     end
   end
 

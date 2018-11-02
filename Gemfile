@@ -65,3 +65,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+
+gem 'paperclip', '~> 6.1'
+
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'

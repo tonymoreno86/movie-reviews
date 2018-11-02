@@ -7,6 +7,7 @@ describe 'Viewing an individual movie' do
 
     visit movie_url(movie)
 
+    expect(page).to have_selector("img[src$='#{movie.image.url}']")
     expect(page).to have_text(movie.title)
     expect(page).to have_text(movie.rating)
     expect(page).to have_text(movie.description)

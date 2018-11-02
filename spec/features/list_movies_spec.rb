@@ -11,7 +11,7 @@ describe "Viewing the list of movies" do
                           cast: "Robert Downey Jr., Gwyneth Paltrow and Terrence Howard",
                           director: "Jon Favreau",
                           duration: "126 min",
-                          image_file_name: "ironman.jpg")
+                          image: open("#{Rails.root}/app/assets/images/ironman.jpg"))
 
     movie2 = Movie.create(title: "Superman",
                           rating: "PG",
@@ -39,6 +39,7 @@ describe "Viewing the list of movies" do
     expect(page).to have_text(movie2.title)
     expect(page).to have_text(movie3.title)
 
+    expect(page).to have_selector("img[src$='#{movie1.image.url}']")
     expect(page).to have_text(movie1.rating)
     expect(page).to have_text(movie1.description[0..10])
     expect(page).to have_text(movie1.released_on.year)
