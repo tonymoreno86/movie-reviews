@@ -7,6 +7,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+group :development, :test do
+  gem 'sqlite3'
+end
+
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
