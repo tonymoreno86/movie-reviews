@@ -18,5 +18,6 @@
 
 .byebug_history
 
-#Dont show my secrets
-/config/secrets.yml
+#Ignore secrets.yml file
+config/secrets.yml
+
