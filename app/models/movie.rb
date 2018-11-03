@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
 
   has_attached_file :image,
-                    styles: { small: ["125x175#", :jpg, :png, :ico] }
+                    styles: { small: ["125x175#", :jpg, :png] }
 
   has_many :reviews, dependent: :destroy
 
