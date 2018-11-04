@@ -15,7 +15,7 @@ class Movie < ApplicationRecord
     :content_type => { :content_type => ['image/jpeg', 'image/png'] },
     :size => { :less_than => 1.megabyte }
 
-  mount_uploader :image_file_names, MyFlixUploader
+  #mount_uploader :image_file_names, MyFlixUploader
 
   RATINGS = %w(G PG PG-13 R NC-17)
 
