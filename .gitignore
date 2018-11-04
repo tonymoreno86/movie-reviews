@@ -21,3 +21,6 @@
 #Ignore secrets.yml file
 config/secrets.yml
 
+#DONT SHARE MY SECRETS
+.env
+
