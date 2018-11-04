@@ -14,6 +14,4 @@ CarrierWave.configure do |config|
     region:            ENV.fetch('AWS_REGION'), # Required
     stub_responses:    Rails.env.test? # Optional, avoid hitting S3 actual during tests
   }
-
-
 end
