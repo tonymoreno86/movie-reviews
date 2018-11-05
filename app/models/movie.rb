@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
 
-  has_attached_file :image,
-                    styles: { small: ["125x175#", :jpg, :png] }
+  #has_attached_file :main_image,
+  #                  styles: { small: ["125x175#", :jpg, :png] }
 
   has_many :reviews, dependent: :destroy
 
@@ -11,11 +11,11 @@ class Movie < ApplicationRecord
 
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
 
-  validates_attachment :image,
-    :content_type => { :content_type => ['image/jpeg', 'image/png'] },
-    :size => { :less_than => 1.megabyte }
+  validates_presence_of :main_image,
+    :content_type => { :content_type => ['main_image/jpeg', 'main_image/png'] },
+    :size => { :less_than => 1.megabyte}
 
-  mount_uploader :image_file_names, MyFlixUploader
+  mount_uploader :main_image, MyFlixUploader
 
   RATINGS = %w(G PG PG-13 R NC-17)
 
