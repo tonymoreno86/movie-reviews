@@ -11,9 +11,8 @@ class Movie < ApplicationRecord
 
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
 
-  validates_presence_of :main_image,
-    :content_type => { :content_type => ['main_image/jpeg', 'main_image/png'] },
-    :size => { :less_than => 1.megabyte}
+  #validates_presence_of :main_image,
+  #  :size => { :less_than => 1.megabyte}
 
   mount_uploader :main_image, MyFlixUploader
 
