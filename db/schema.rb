@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 20181106001441) do
     t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "city"
-    t.text "state"
     t.index ["movie_id"], name: "index_reviews_on_movie_id"
   end
 
