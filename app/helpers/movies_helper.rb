@@ -9,7 +9,7 @@ module MoviesHelper
 
   def image_for(movie)
     if movie.main_image?
-      image_tag(movie.main_image.url, height: '150x250', width: '150x250')
+      image_tag(movie.main_image.url, width: '21%')
     else
       image_tag('placeholder.png')
     end
