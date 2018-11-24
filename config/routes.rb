@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resource :session
+
+  get 'singin', to: 'sessions#new'
+
+  get 'signup', to: 'users#new'
+
+  resources :users
   root 'movies#index'
   
   # get 'movies', to: 'movies#index'
