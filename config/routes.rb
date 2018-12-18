@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :genres
   resource :session
 
   get 'singin', to: 'sessions#new'
@@ -15,7 +16,13 @@ Rails.application.routes.draw do
   # get 'movies/:id/edit', to: 'movies#edit', as: 'edit_movie'
   # patch 'movies/:id', to: 'movies#update'
 
+  #get 'movies/filter/hits', to: 'movies#index', scope: 'hits'
+  #get 'movies/filter/flops', to: 'movies#index', scope: 'flops'
+
+  get 'movies/filter/:scope', to: 'movies#index', as: :filtered_movies
+
   resources :movies do
     resources :reviews
+    resources :favorites
   end
 end

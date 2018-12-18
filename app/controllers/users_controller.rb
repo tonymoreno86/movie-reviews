@@ -4,12 +4,13 @@ class UsersController < ApplicationController
 
   before_action :require_correct_user, only: [:edit, :update, :destroy]
   def index
-    @users = User.all
+    @users = User.not_admins
   end
 
   def show
     @user = User.find(params[:id])
     @reviews = @user.reviews
+    @favorite_movies = @user.favorite_movies
   end
 
   def new
