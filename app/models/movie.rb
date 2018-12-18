@@ -1,7 +1,5 @@
 class Movie < ApplicationRecord
 
-  to_param :title
-
   has_many :reviews, dependent: :destroy
 
   has_many :favorites, dependent: :destroy
@@ -72,7 +70,9 @@ class Movie < ApplicationRecord
     reviews.order('created_at desc').limit(2)
   end
 
-
+  def to_param
+    slug
+  end
 
   def generate_slug
     self.slug ||= title.parameterize if title
