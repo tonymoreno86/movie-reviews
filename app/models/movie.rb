@@ -1,5 +1,7 @@
 class Movie < ApplicationRecord
 
+  before_validation :generate_slug
+
   has_many :reviews, dependent: :destroy
 
   has_many :favorites, dependent: :destroy
@@ -15,8 +17,6 @@ class Movie < ApplicationRecord
   validates :description, length: { minimum: 25 }
 
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
-
-  before_validation :generate_slug
 
   validates :title, presence: true, uniqueness: true
   validates :slug, uniqueness: true
