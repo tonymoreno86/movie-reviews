@@ -10,17 +10,9 @@ User.create!(
   email: "tonymoreno86@gmail.com",
   password: "benzc230",
   password_confirmation: "benzc230",
-  username: "tonymoreno86"
+  username: "tonymoreno86",
   admin: true
   )
-
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "username"
-    t.boolean "admin", default: false
 
 Movie.create!([
   {
